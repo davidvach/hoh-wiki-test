@@ -11,8 +11,14 @@ const CampaignPage = () => {
 
   	const selectedTab = useTabHandler(layoutCampaign);
 
+	const pageName = selectedTab.url ? (
+        <span>
+            <a href={`/${basePath}`} className="text-link-white">Campaign</a> &gt; {selectedTab.name}
+        </span>
+    ) : "Campaign";
+
   	const renderSelectedTab = () => {
-    	switch (selectedTab) {
+    	switch (selectedTab.url) {
 			case "provinces":
 				return <Provinces />;
 			default:
@@ -21,7 +27,7 @@ const CampaignPage = () => {
   	};
 
   	return (
-    	<Container basePath={basePath} tabs={layoutCampaign.tabs}>
+    	<Container basePath={basePath} tabs={layoutCampaign.tabs} pageName={pageName}>
       		{renderSelectedTab()}
     	</Container>
   	);

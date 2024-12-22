@@ -1,21 +1,25 @@
 import { useState, useEffect } from "react";
 
 export const useTabHandler = (layout) => {
-	const [selectedTab, setSelectedTab] = useState(null);
+	const getInitialTab = () => {
+		const hash = window.location.hash.split("?")[0].replace("#", "").toLowerCase();
+		const foundTab = layout.tabs.find(tab => tab.url.toLowerCase() === hash);
+		return foundTab ? foundTab : layout.tabs[0];
+	};
+
+	const [selectedTab, setSelectedTab] = useState(getInitialTab);
 
 	useEffect(() => {
 		const handleHashChange = () => {
-			const hash = window.location.hash.replace("#", "").toLowerCase();
-			const isValidTab = layout.tabs.some(tab => tab.url.toLowerCase() === hash);
-			setSelectedTab(isValidTab ? hash : layout.tabs[0]?.url || "intro");
+		const hash = window.location.hash.split("?")[0].replace("#", "").toLowerCase();
+		const foundTab = layout.tabs.find(tab => tab.url.toLowerCase() === hash);
+		setSelectedTab(foundTab ? foundTab : layout.tabs[0]);
 		};
-
-		handleHashChange();
 
 		window.addEventListener("hashchange", handleHashChange);
 
 		return () => {
-			window.removeEventListener("hashchange", handleHashChange);
+		window.removeEventListener("hashchange", handleHashChange);
 		};
 	}, [layout]);
 
