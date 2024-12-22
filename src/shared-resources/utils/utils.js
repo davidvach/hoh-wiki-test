@@ -191,11 +191,13 @@ const eraGoods = {
 }
 
 export const getFromLocalStorage = (string) => {
-    if (string === "preset_era") {
-        if (!localStorage.getItem(string)) {
-            localStorage.setItem(string, "RomanEmpire");
+    if (typeof window !== 'undefined') {
+        if (string === "preset_era") {
+            if (!localStorage.getItem(string)) {
+                localStorage.setItem(string, "RomanEmpire");
+            }
+            return localStorage.getItem(string);
         }
-        return localStorage.getItem(string);
     }
 }
 
