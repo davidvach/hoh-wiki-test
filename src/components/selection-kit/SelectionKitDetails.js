@@ -1,5 +1,5 @@
 import React from "react";
-import { getItemIcon } from "../../shared-resources/utils";
+import { getItemIcon } from "@/src/shared-resources/utils/utils";
 import selectionKitsImages from "@/src/shared-resources/data/selectionKitsImages";
 
 const SelectionKitDetails = ({ selectionKit }) => {

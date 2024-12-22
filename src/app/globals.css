@@ -117,3 +117,9 @@ table > thead > tr:first-child > th:last-child {
       width: 100%;
   }
 }
+
+.resource-span {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 10px;
+}

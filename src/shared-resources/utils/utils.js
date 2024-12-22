@@ -7,6 +7,8 @@ import ChestPreview from "@/src/components/chest/ChestPreview";
 import _customizations from "@/src/app/events/_data/_customizations";
 import dynamicDefinitions from "../data/dynamicDefinitions";
 import dropdownItems from "@/src/components/shared/navbar/dropdownItems";
+import selectionKits from "../data/selectionKits";
+import SelectionKitPreview from "@/src/components/selection-kit/SelectionKitPreview";
 
 export const leftJoinArrays = (left, right) => {
     const rightMap = right.reduce((map, oneRight) => {
