@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import "./Container.css";
 import Tabs from '../tabs/Tabs';
 
-const Container = ({ children, basePath, tabs, pageName, selectBox }) => {
+const Container = ({ children, basePath, tabs, selectedTab, pageName, selectBox }) => {
     const [showModal, setShowModal] = useState(false);
 
     const handleIconClick = () => {
@@ -15,7 +15,7 @@ const Container = ({ children, basePath, tabs, pageName, selectBox }) => {
     };
 
     return <>
-        <Tabs basePath={basePath} tabs={tabs}/>
+        <Tabs basePath={basePath} tabs={tabs} selectedTab={selectedTab} />
         <section className="section-header">
             <div className={`header-left ${!selectBox ? 'empty-selectbox' : ''}`}>{pageName}</div>
             <div className={`header-center ${!selectBox ? 'empty' : ''}`}>{selectBox}</div>

@@ -34,7 +34,7 @@ const HeroesPage = () => {
     };
 
     return (
-        <Container basePath={basePath} tabs={layoutHeroes.tabs} pageName={pageName}>
+        <Container basePath={basePath} tabs={layoutHeroes.tabs} selectedTab={selectedTab} pageName={pageName}>
             {renderSelectedTab()}
         </Container>
     );

@@ -47,7 +47,7 @@
     color: rgb(243, 223, 157);
 }
 
-.section-tabs .tab .active {
+.section-tabs .tab.active {
     font-weight: bold;
 }
 

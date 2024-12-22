@@ -27,7 +27,7 @@ const CampaignPage = () => {
   	};
 
   	return (
-    	<Container basePath={basePath} tabs={layoutCampaign.tabs} pageName={pageName}>
+    	<Container basePath={basePath} tabs={layoutCampaign.tabs} selectedTab={selectedTab} pageName={pageName}>
       		{renderSelectedTab()}
     	</Container>
   	);
