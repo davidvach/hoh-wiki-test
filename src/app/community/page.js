@@ -30,7 +30,7 @@ const CommunityPage = () => {
   	};
 
   	return (
-    	<Container basePath={basePath} tabs={layoutResources.tabs} selectedTab={selectedTab} pageName={pageName}>
+    	<Container basePath={basePath} tabs={layoutCommunity.tabs} selectedTab={selectedTab} pageName={pageName}>
       		{renderSelectedTab()}
     	</Container>
   	);
