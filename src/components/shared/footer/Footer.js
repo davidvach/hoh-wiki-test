@@ -3,7 +3,7 @@ import "./Footer.css";
 const Footer = () => {
 
     const textsLeft = [];
-    const textsMiddle = ["HoH - Atlas © Copyright 2024"];
+    const textsMiddle = ["Heroes of History Wiki © Copyright 2024"];
     const textsRight = [];
     
     return (

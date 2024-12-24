@@ -6,7 +6,10 @@ const FeedbackModal = ({ show, handleClose }) => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const modalRef = useRef(null);
-    const from = window.location.hash;
+    let from;
+    if (typeof window !== 'undefined') {
+        from = window.location.hash;
+    }
     
     const minutesToWait = 15;
 
